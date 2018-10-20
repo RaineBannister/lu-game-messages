@@ -1,0 +1,19 @@
+{
+  "name": "lugamemessages",
+  "version": "1.0.0",
+  "description": "LUGameMessages",
+  "main": "GameMessages.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaineBannister/lu-game-messages.git"
+  },
+  "author": "Raine Bannister",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaineBannister/lu-game-messages/issues"
+  },
+  "homepage": "https://github.com/RaineBannister/lu-game-messages#readme"
+}

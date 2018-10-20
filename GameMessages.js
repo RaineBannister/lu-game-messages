@@ -44,3 +44,5 @@ const GameMessages = {
         id: 0x066a
     }
 };
+
+module.exports = GameMessages;
