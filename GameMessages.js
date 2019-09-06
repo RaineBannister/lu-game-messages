@@ -1,6 +1,13 @@
+const GameMessageKey = {
+    'teleport': 0x0013,
+    'playerLoaded': 0x01f9,
+    'playerReady': 0x01fd,
+    'parseChatMessage': 0x0352,
+    'serverDoneLoadingAllObjects': 0x066a
+};
+
 const GameMessages = {
-    teleport: {
-        id: 0x0013,
+    0x0013: {
         noGravTeleport: {
             type: 'bit'
         },
@@ -37,12 +44,23 @@ const GameMessages = {
             type: 'float'
         }
     },
-    playerReady: {
-        id: 0x01fd
+    0x01f9: {
+        playerID: {
+            type: 'lwoobjid'
+        }
     },
-    serverDoneLoadingAllObjects: {
-        id: 0x066a
+    0x01fd: {
+    },
+    0x0352: {
+        clientState: {
+            type: 'int'
+        },
+        string: {
+            type: 'wstring'
+        }
+    },
+    0x066a: {
     }
 };
 
-module.exports = GameMessages;
+module.exports = {GameMessages, GameMessageKey};
