@@ -194,7 +194,7 @@ const GameMessageKey = {
     'moduleAssemblyDBDataForClient': 0x046b,
     'moduleAssemblyQueryData': 0x046c,
     'echoSyncSkill': 0x0478,
-    'syncSkill': 0x049,
+    'syncSkill': 0x0479,
     'requestServerProjectileImpact': 0x047c,
     'doClientProjectileImpact': 0x047f,
     'modularBuildConvertModel': 0x0483,
