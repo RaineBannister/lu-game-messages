@@ -6,6 +6,15 @@ const GameMessageKey = {
     'serverDoneLoadingAllObjects': 0x066a
 };
 
+GameMessageKey.key = function(value) {
+    for( let prop in this ) {
+        if( this.hasOwnProperty( prop ) ) {
+            if( this[ prop ] === value )
+                return prop;
+        }
+    }
+};
+
 const GameMessages = {
     0x0013: {
         noGravTeleport: {
