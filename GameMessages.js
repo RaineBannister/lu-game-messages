@@ -352,25 +352,32 @@ const GameMessages = {
             default: 0
         },
         x: {
-
+            type: 'float',
+            default: 'MAX_FLOAT'
         },
         y: {
-
+            type: 'float',
+            default: 'MAX_FLOAT'
         },
         z: {
-
+            type: 'float',
+            default: 'MAX_FLOAT'
         },
         rotW: {
-
+            type: 'float',
+            default: 1
         },
         rotX: {
-
+            type: 'float',
+            default: 0
         },
         rotY: {
-
+            type: 'float',
+            default: 0
         },
         rotZ: {
-
+            type: 'float',
+            default: 0
         },
         spawnPoint: {
             type: 'wstring'
