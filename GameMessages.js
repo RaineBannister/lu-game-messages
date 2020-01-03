@@ -298,6 +298,7 @@ GameMessageKey.key = function(value) {
 };
 
 const GameMessages = {
+    // Teleport
     0x0013: {
         noGravTeleport: {
             type: 'bit'
@@ -335,13 +336,214 @@ const GameMessages = {
             type: 'float'
         }
     },
+    // DropClientLoot
+    0x001e: {
+        usePosition: {
+            type: 'bit',
+            default: false
+        },
+        finalPosition: {
+            type: 'NiPoint3',
+            default: 'NiPoint3:ZERO'
+        },
+        currency: {
+            type: 'long'
+        },
+        itemTemplate: {
+            type: 'long'
+        },
+        lootID: {
+            type: 'lwoobjid'
+        },
+        owner: {
+            type: 'lwoobjid'
+        },
+        sourceObject: {
+            type: 'lwoobjid'
+        },
+        spawnPosition: {
+            type: 'NiPoint3',
+            default: 'NiPoint3:ZERO'
+        }
+    },
+    // Die
+    0x0025: {
+        clientDeath: {
+            type: 'bit',
+            default: false
+        },
+        spawnLoot: {
+            type: 'bit',
+            default: true
+        },
+        deathType: {
+            type: 'wstring'
+        },
+        angleXZ: {
+            type: 'float'
+        },
+        angleY: {
+            type: 'float'
+        },
+        force: {
+            type: 'float'
+        },
+        killType: {
+            type: 'KillType',
+            default: 'VIOLENT'
+        },
+        killerID: {
+            type: 'lwoobjid'
+        },
+        lootOwnerID: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID_EMPTY'
+        }
+    },
+    // RequestDie
+    0x0026: {
+        dieAccepted: {
+            type: 'bit'
+        },
+        deathType: {
+            type: 'wstring'
+        },
+        angleXZ: {
+            type: 'float'
+        },
+        angleY: {
+            type: 'float'
+        },
+        force: {
+            type: 'float'
+        },
+        killType: {
+            type: 'KillType',
+            default: 'VIOLENT'
+        },
+        killerID: {
+            type: 'lwoobjid'
+        },
+        lootOwnerID: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        }
+    },
+    // PlayEmote
+    0x0029: {
+        emoteID: {
+            type: 'long'
+        },
+        targetID: {
+            type: 'lwoobjid'
+        }
+    },
+    // PreloadAnimation
+    0x002a: {
+        animationID: {
+            type: 'wstring'
+        },
+        handled: {
+            type: 'bit',
+            default: false
+        },
+        respondObjectID: {
+            type: 'lwoobjid'
+        },
+        userData: {
+            type: 'wstring'
+        }
+    },
+    // PlayAnimation
+    0x002b: {
+        animationID: {
+            type: 'wstring'
+        },
+        expectAnimationToExist: {
+            type: 'bit',
+            default: true
+        },
+        playImmediate: {
+            type: 'bit'
+        },
+        triggerOnCompleteMessage: {
+            type: 'bit',
+            default: false
+        },
+        priority: {
+            type: 'float',
+            default: 0.4
+        },
+        scale: {
+            type: 'float',
+            default: 1
+        }
+    },
+    // ControlBehaviors
+    0x0030: {
+        args: {
+            type: 'amf3'
+        },
+        command: {
+            type: 'string'
+        }
+    },
+    // SetName
+    0x0048: {
+        name: {
+            type: 'wstring'
+        }
+    },
+    // EchoStartSkill
+    0x0076: {
+        usedMouse: {
+            type: 'bit',
+            default: false
+        },
+        casterLatency: {
+            type: 'float',
+            default: 0
+        },
+        castType: {
+            type: 'long',
+            default: 0
+        },
+        lastClickedPosition: {
+            type: 'NiPoint3',
+            default: 'NiPoint3:0'
+        },
+        optionalOriginatorID: {
+            type: 'lwoobjid'
+        },
+        optionalTargetID: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID_EMPTY'
+        },
+        originatorRotation: {
+            type: 'NiQuaternion',
+            default: 'NiQuaternion:IDENTITY'
+        },
+        bitstream: {
+            type: 'string'
+        },
+        skillID: {
+            type: 'long'
+        },
+        uiSkillHandle: {
+            type: 'long',
+            default: 0
+        }
+    },
+    // PlayerLoaded
     0x01f9: {
         playerID: {
             type: 'lwoobjid'
         }
     },
+    // PlayerReady
     0x01fd: {
     },
+    // TransferToZone
     0x0204: {
         checkTransferAllowed: {
             type: 'bit',
@@ -389,6 +591,7 @@ const GameMessages = {
             type: 'short'
         }
     },
+    // ParseChatMessage
     0x0352: {
         clientState: {
             type: 'int'
@@ -397,6 +600,7 @@ const GameMessages = {
             type: 'wstring'
         }
     },
+    // serverDoneLoadingAllObjects
     0x066a: {
     }
 };
