@@ -397,7 +397,7 @@ const GameMessages = {
         },
         lootOwnerID: {
             type: 'lwoobjid',
-            default: 'LWOOBJID_EMPTY'
+            default: 'LWOOBJID:EMPTY'
         }
     },
     // RequestDie
@@ -517,7 +517,7 @@ const GameMessages = {
         },
         optionalTargetID: {
             type: 'lwoobjid',
-            default: 'LWOOBJID_EMPTY'
+            default: 'LWOOBJID:EMPTY'
         },
         originatorRotation: {
             type: 'NiQuaternion',
@@ -532,6 +532,335 @@ const GameMessages = {
         uiSkillHandle: {
             type: 'long',
             default: 0
+        }
+    },
+    // StartSkill
+    0x0077: {
+        usedMouse: {
+            type: 'bit',
+            default: false
+        },
+        consumableItemID: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        casterLatency: {
+            type: 'float',
+            default: 0
+        },
+        castType: {
+            type: 'long',
+            default: 0
+        },
+        lastClickedPosition: {
+            type: 'NiPoint3',
+            default: 'NiPoint3:0'
+        },
+        optionalOriginatorID: {
+            type: 'lwoobjid'
+        },
+        optionalTargetID: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        originatorRotation: {
+            type: 'NiQuaternion',
+            default: 'NiQuaternion:IDENTITY'
+        },
+        bitstream: {
+            type: 'string'
+        },
+        skillID: {
+            type: 'long'
+        },
+        uiSkillHandle: {
+            type: 'long',
+            default: 0
+        }
+    },
+    // CasterDead
+    0x0078: {
+        caster: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        skillHandle: {
+            type: 'long'
+        }
+    },
+    // VerifyAck
+    0x0079: {
+        different: {
+            type: 'bit',
+            default: false
+        },
+        bitStream: {
+            type: 'string'
+        },
+        uiHandle: {
+            type: 'long',
+            default: 0
+        }
+    },
+    // SelectSkill
+    0x007c: {
+        fromSkillSet: {
+            type: 'bit',
+            default: false
+        },
+        skillID: {
+            type: 'long'
+        }
+    },
+    // AddSkill
+    0x007f: {
+        AICombatWeight: {
+            type: 'long',
+            default: 0
+        },
+        fromSkillSet: {
+            type: 'bit',
+            default: false
+        },
+        castType: {
+            type: 'long',
+            default: 0
+        },
+        timeSecs: {
+            type: 'float',
+            default: -1
+        },
+        timeCanCast: {
+            type: 'long',
+            default: -1
+        },
+        skillID: {
+            type: 'long'
+        },
+        slotID: {
+            type: 'long',
+            default: -1
+        },
+        temporary: {
+            type: 'bit',
+            default: true
+        }
+
+    },
+    // RemoveSkill
+    0x0080: {
+        fromSkillSet: {
+            type: 'bit',
+            default: false
+        },
+        skillID: {
+            type: 'long'
+        }
+    },
+    // SetCurrency
+    0x0085: {
+        currency: {
+            type: 'long long'
+        },
+        lootType: {
+            type: 'long',
+            default: 0
+        },
+        position: {
+            type: 'NiPoint3'
+        },
+        lot: {
+            type: 'long',
+            default: 0
+        },
+        sourceObject: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        sourceTradeID: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        sourceType: {
+            type: 'int',
+            default: 0
+        }
+    },
+    // PickupCurrency
+    0x0089: {
+        currency: {
+            type: 'long'
+        },
+        position: {
+            type: 'NiPoint3'
+        }
+    },
+    // PickupItem
+    0x008b: {
+        lootID: {
+            type: 'lwoobjid'
+        },
+        lootOwnerID: {
+            type: 'lwoobjid'
+        }
+    },
+    // TeamPickupItem
+    0x008c: {
+        lootID: {
+            type: 'lwoobjid'
+        },
+        lootOwnerID: {
+            type: 'lwoobjid'
+        }
+    },
+    // PlayFXEffect
+    0x009a: {
+        effectID: {
+            type: 'long',
+            default: -1
+        },
+        effectType: {
+            type: 'wstring'
+        },
+        scale: {
+            type: 'float',
+            default: 1
+        },
+        name: {
+            type: 'string'
+        },
+        priority: {
+            type: 'float',
+            default: 1
+        },
+        secondary: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        serialize: {
+            type: 'bit',
+            default: true
+        }
+    },
+    // StopFXEffect
+    0x009b: {
+        killImmediate: {
+            type: 'bit'
+        },
+        name: {
+            type: 'string'
+        }
+    },
+    // RequestResurrect
+    0x009f: {
+    },
+    // Resurrect
+    0x00a0: {
+        resurrectImmediately: {
+            type: 'bit',
+            default: false
+        }
+    },
+    // PopEquippedItemsState
+    0x00c0: {
+    },
+    // SetStunned
+    0x0c6: {
+        originator: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        stateChangeType: {
+            type: 'StateChangeType'
+        },
+        cantAttack: {
+            type: 'bit'
+        },
+        cantAttackOutChangeWasApplied: {
+            type: 'bit',
+            default: false
+        },
+        cantEquip: {
+            type: 'bit'
+        },
+        cantEquipOutChangeWasApplied: {
+            type: 'bit',
+            default: false
+        },
+        cantInteract: {
+            type: 'bit'
+        },
+        cantInteractOutChangeWasApplied: {
+            type: 'bit',
+            default: false
+        },
+        cantJump: {
+            type: 'bit'
+        },
+        cantJumpOutChangeWasApplied: {
+            type: 'bit',
+            default: false
+        },
+        cantMove: {
+            type: 'bit'
+        },
+        cantMoveOutChangeWasApplied: {
+            type: 'bit',
+            default: false
+        },
+        cantTurn: {
+            type: 'bit'
+        },
+        cantTurnOutChangeWasApplied: {
+            type: 'bit',
+            default: false
+        },
+        cantUseItem: {
+            type: 'bit',
+            default: false
+        },
+        cantUseItemOutChangeApplied: {
+            type: 'bit',
+            default: false
+        },
+        dontTerminateInteract: {
+            type: 'bit',
+            default: false
+        },
+        ignoreImmunity: {
+            type: 'bit',
+            default: true
+        }
+    },
+    // SetStunImmunity
+    0x00c8: {
+        caster: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        stateChangeType: {
+            type: 'StateChangeType'
+        },
+        immuneToStunAttack: {
+            type: 'bit'
+        },
+        immuneToStunEquip: {
+            type: 'bit'
+        },
+        immuneToStunInteract: {
+            type: 'bit'
+        },
+        immuneToStunJump: {
+            type: 'bit'
+        },
+        immuneToStunMove: {
+            type: 'bit'
+        },
+        immuneToStunTurn: {
+            type: 'bit'
+        },
+        immuneToStunUseItem: {
+            type: 'bit'
         }
     },
     // PlayerLoaded
