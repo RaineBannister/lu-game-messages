@@ -21,7 +21,7 @@ const DeleteReason = {
     BREAKING_MODEL_APART: 2
 };
 
-const endBehavior = {
+const EndBehavior = {
     RETURN: 0,
     WAIT: 1
 };

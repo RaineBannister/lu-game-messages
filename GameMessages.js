@@ -863,6 +863,125 @@ const GameMessages = {
             type: 'bit'
         }
     },
+    // Knockback
+    0x00ca: {
+        caster: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        originator: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        knockBackTimeMS: {
+            type: 'long',
+            default: 0
+        },
+        vector: {
+            type: 'NiPoint3'
+        }
+    },
+    // RebuildCancer
+    0x00d1: {
+        earlyRelease: {
+            type: 'earlyRelease'
+        },
+        userID: {
+            type: 'lwoobjid'
+        }
+    },
+    // EnableRebuild
+    0x00d5: {
+        enable: {
+            type: 'bit'
+        },
+        fail: {
+            type: 'bit'
+        },
+        success: {
+            type: 'bit'
+        },
+        failReason: {
+            type: 'FailReason',
+            default: 'NOT_GIVEN'
+        },
+        duration: {
+            type: 'float'
+        },
+        user: {
+            type: 'lwoobjid'
+        }
+    },
+    // MoveItemInInventory
+    0x0e0: {
+        destinationInventoryType: {
+            type: 'long',
+            default: 0
+        },
+        objectID: {
+            type: 'lwoobjid'
+        },
+        inventoryType: {
+            type: 'long'
+        },
+        responseCode: {
+            type: 'long'
+        },
+        slot: {
+            type: 'long'
+        }
+    },
+    // AddItemToInventoryClientSync
+    0x00e3: {
+        bound: {
+            type: 'bit'
+        },
+        boe: {
+            type: 'bit'
+        },
+        bop: {
+            type: 'bit'
+        },
+        lootTypeSource: {
+            type: 'long',
+            default: 0
+        },
+        extraInfo: {
+            type: 'wstring'
+        },
+        objectTemplate: {
+            type: long
+        },
+        subkey: {
+            type: 'lwoobjid',
+            default: 'LWOOBJID:EMPTY'
+        },
+        inventoryType: {
+            type: 'long',
+            default: 0
+        },
+        itemCount: {
+            type: 'long',
+            default: 1
+        },
+        itemsTotal: {
+            type: 'long',
+            default: 0
+        },
+        newObjectID: {
+            type: 'lwoobjid'
+        },
+        flyingLootPosition: {
+            type: 'NiPoint3'
+        },
+        showFlyingLoot: {
+            type: 'bit',
+            default: true
+        },
+        slotID: {
+            type: 'long'
+        }
+    },
     // PlayerLoaded
     0x01f9: {
         playerID: {
