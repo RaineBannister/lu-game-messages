@@ -950,7 +950,7 @@ const GameMessages = {
             type: 'wstring'
         },
         objectTemplate: {
-            type: long
+            type: 'long'
         },
         subkey: {
             type: 'lwoobjid',
