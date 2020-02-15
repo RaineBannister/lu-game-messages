@@ -90,7 +90,7 @@ const GameMessageKey = {
     'unSmash': 0x021a,
     'setGravityScale': 0x021d,
     'placeModelResponse': 0x0223,
-    'setJetPackMod': 0x0231,
+    'setJetPackMode': 0x0231,
     'registerPetID': 0x0235,
     'registerPetDBID': 0x0236,
     'showActivityCountdown': 0x0238,
@@ -1037,6 +1037,40 @@ const GameMessages = {
         },
         zoneID: {
             type: 'short'
+        }
+    },
+    // SetJetpackMode
+    0x0231: {
+        bypassChecks: {
+            type: 'bit',
+            default: false
+        },
+        doHover: {
+            type: 'bit',
+            default: false
+        },
+        use: {
+            type: 'bit'
+        },
+        effectID: {
+            type: 'int',
+            default: -1
+        },
+        airspeed: {
+            type: 'float',
+            default: 10
+        },
+        maxAirspeed: {
+            type: 'float',
+            default: 15
+        },
+        verticalVelocity: {
+            type: 'float',
+            default: 1
+        },
+        warningEffectID: {
+            type: 'int',
+            default: -1
         }
     },
     // ParseChatMessage
